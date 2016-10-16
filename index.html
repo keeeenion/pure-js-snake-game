@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <!--
+        Created by Keeeenion (me @ keeeenion.me)
+        date 16.10.2016
+    -->
+    <meta charset="UTF-8">
+    <title>Snake game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="help">
+        <h3>Ussimäng</h3>
+        <p>Kasuta nooli ussi juhtimiseks.</p>
+        <p>Mängu reeglid:</p>
+        <ul>
+            <li>Uss ei tohi iseennast puudutada</li>
+            <li>Mäng lõppeb seina puudutades</li>
+            <li>Punkt vahetab kohta iga 30 sekundi tagant pärast tekkimist</li>
+        </ul>
+    </div>
+    <div id="score">score: 123</div>
+    <div id="level">lvl: 2</div>
+    <div id="stage"></div>
+	
+	<!-- Mängu import -->
+    <script src="snake.js" type="text/javascript"></script>
+    <!-- Uue mängu loomine -->
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            var pElement = document.getElementById("stage");
+            var lvlElement = document.getElementById("level");
+            var scoreElement = document.getElementById("score");
+            // Veel sätteid leiab snake.js koodist
+            // Sätete muutmine ei ole kohustuslik
+            var settings = {
+                Height: "500",
+                Width: "500",
+                pixelSize: "10",
+            };
+            var snake = new SnakeGame(pElement, lvlElement, scoreElement, settings);
+        }, true);
+    </script>
+</body>
+
+</html>
